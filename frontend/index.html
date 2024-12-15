@@ -17,20 +17,10 @@
 <!-- NAVBAR -->
 <nav class="navbar">
     <div class="nav-wrapper">
-        <div class="nav-content">
-            <div class="nav-left">
-                <a href="#" class="nav-logo">
-                    <img src="./assets/images/tennis-ball.png" class="logo-img" alt="FlowBite Logo"/>
-                    <span class="logo-text">SuperSpin</span>
-                </a>
-            </div>
-
-            <div class="profile-wrapper">
-                <div class="profile-img-wrapper">
-                    <img class="profile-img" src="./assets/images/profile-picture.jpg" alt="user photo">
-                </div>
-            </div>
-        </div>
+        <a href="#" class="nav-logo">
+            <img src="./assets/images/tennis-ball.png" class="logo-img" alt="SuperSpin Logo"/>
+            <span class="logo-text">SuperSpin</span>
+        </a>
     </div>
 </nav>
 
@@ -50,6 +40,92 @@
         </ul>
     </div>
 </aside>
+
+<!-- MAIN CONTENT -->
+<section class="main-content">
+    <div class="content-wrapper">
+        <header class="header">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <ol class="breadcrumb-list">
+                    <li class="breadcrumb-item">
+                        <a href="#" class="breadcrumb-link">
+                            Coaches
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item-current">
+                        <div class="breadcrumb-current">
+                            <svg class="breadcrumb-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                 fill="none" viewBox="0 0 6 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                      stroke-width="2" d="m1 9 4-4-4-4"/>
+                            </svg>
+                            <span class="breadcrumb-text">Listing</span>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+            <div class="header-content">
+                <h1 class="heading">
+                    Coaches
+                </h1>
+            </div>
+        </header>
+
+        <!-- Table -->
+        <div class="table-section-container">
+            <div class="table-search-container">
+                <div class="table-search-wrapper">
+                    <div class="table-search-icon">
+                        <svg class="table-search-svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                             viewBox="0 0 20 20">
+                            <path class="table-search-path" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                        </svg>
+                    </div>
+                    <label for="table-search-users"></label>
+                    <input type="text" id="table-search-users" class="table-search-input" placeholder="Search">
+                </div>
+            </div>
+            <table id="coaches-table" class="table-container">
+                <thead>
+                <tr>
+                    <th scope="col" class="table-checkbox-header">
+                        <div class="flex items-center">
+                            <input id="checkbox-all-search" type="checkbox" class="table-checkbox">
+                            <label for="checkbox-all-search" class="sr-only">checkbox</label>
+                        </div>
+                    </th>
+                    <th scope="col" class="table-header">Name</th>
+                    <th scope="col" class="table-header">Years of Experience</th>
+                    <th scope="col" class="table-header">Hourly Rate</th>
+                    <th scope="col" class="table-header">Location</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="table-row">
+                    <td class="table-checkbox-cell">
+                        <div class="flex items-center">
+                            <input id="checkbox-table-search-1" type="checkbox" class="table-checkbox">
+                            <label for="checkbox-table-search-1" class="sr-only">checkbox</label>
+                        </div>
+                    </td>
+                    <td class="table-row-avatar">
+                        <img src="./assets/images/profile-picture.jpg" alt="Neil Sims" class="table-avatar">
+                        <div class="table-row-info">
+                            <div class="table-row-name">Neil Sims</div>
+                            <div class="table-row-meta">Joined in 01/01/2024</div>
+                        </div>
+                    </td>
+                    <td class="table-data">5 years of experience</td>
+                    <td class="table-data">37.50€ per hour</td>
+                    <td class="table-data">Braga, Portugal</td>
+                </tr>
+                <!-- Repeat rows as needed -->
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</section>
 
 <script src="./js/main.js"></script>
 </body>
