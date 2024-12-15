@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    z-index: 50;
+    width: 100%;
+    background-color: #2d3748;
+    border-bottom: 1px solid #4a5568;
+}
+
+.nav-wrapper {
+    padding: 0.75rem 0.75rem 0.75rem 1.5rem;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.nav-logo {
+    display: flex;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 2rem;
+    margin-right: 0.75rem;
+}
+
+.logo-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    white-space: nowrap;
+    align-self: center;
+}
+
+.profile-wrapper {
+    display: flex;
+    align-items: center;
+    margin-left: 0.75rem;
+}
+
+.profile-img-wrapper {
+    display: flex;
+    background-color: #2d3748;
+    border-radius: 9999px;
+    padding: 0.125rem;
+    transition: background-color 0.3s ease;
+}
+
+.profile-img-wrapper:hover {
+    background-color: #4a5568;
+}
+
+.profile-img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 9999px;
+    cursor: pointer;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 40;
+    width: 16rem;
+    height: 100vh;
+    padding-top: 5rem;
+    transition: transform 0.3s ease-in-out;
+    background-color: #2d3748;
+    border-right: 1px solid #4a5568;
+}
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+.sidebar-content {
+    height: 100%;
+    padding: 0 1rem 1rem;
+    overflow-y: auto;
+    background-color: #2d3748;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.menu-item:hover {
+    background-color: #4a5568;
+}
+
+.menu-icon {
+    flex-shrink: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    transition: color 0.3s ease;
+    color: #a0aec0;
+}
+
+.menu-item:hover .menu-icon {
+    color: white;
+}
+
+.menu-text {
+    flex-grow: 1;
+    margin-left: 0.75rem;
+    white-space: nowrap;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%); /* Hide sidebar on small screens */
+    }
+
+    .sidebar.open {
+        transform: translateX(0); /* Show sidebar on small screens */
+    }
+}
