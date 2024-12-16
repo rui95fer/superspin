@@ -74,6 +74,14 @@
         <!-- Table -->
         <div class="table-section-container">
             <div class="table-search-container">
+                <div class="table-sort">
+                    <label for="table-sort-users"></label>
+                    <select id="table-sort-users" class="table-sort-select">
+                        <option value="" disabled selected>Sort by</option>
+                        <option value="asc">Hourly Rate (ascending)</option>
+                        <option value="desc">Hourly Rate (descending)</option>
+                    </select>
+                </div>
                 <div class="table-search-wrapper">
                     <div class="table-search-icon">
                         <svg class="table-search-svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -88,12 +96,6 @@
             <table id="coaches-table" class="table-container">
                 <thead>
                 <tr>
-                    <th scope="col" class="table-checkbox-header">
-                        <div class="flex items-center">
-                            <input id="checkbox-all-search" type="checkbox" class="table-checkbox">
-                            <label for="checkbox-all-search" class="sr-only">checkbox</label>
-                        </div>
-                    </th>
                     <th scope="col" class="table-header">Name</th>
                     <th scope="col" class="table-header">Years of Experience</th>
                     <th scope="col" class="table-header">Hourly Rate</th>
@@ -101,25 +103,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr class="table-row">
-                    <td class="table-checkbox-cell">
-                        <div class="flex items-center">
-                            <input id="checkbox-table-search-1" type="checkbox" class="table-checkbox">
-                            <label for="checkbox-table-search-1" class="sr-only">checkbox</label>
-                        </div>
-                    </td>
-                    <td class="table-row-avatar">
-                        <img src="./assets/images/profile-picture.jpg" alt="Neil Sims" class="table-avatar">
-                        <div class="table-row-info">
-                            <div class="table-row-name">Neil Sims</div>
-                            <div class="table-row-meta">Joined in 01/01/2024</div>
-                        </div>
-                    </td>
-                    <td class="table-data">5 years of experience</td>
-                    <td class="table-data">37.50€ per hour</td>
-                    <td class="table-data">Braga, Portugal</td>
-                </tr>
-                <!-- Repeat rows as needed -->
+                <!-- Load Coaches -->
                 </tbody>
             </table>
         </div>

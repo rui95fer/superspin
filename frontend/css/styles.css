@@ -209,7 +209,6 @@
 
 .table-search-container {
     display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
@@ -358,6 +357,26 @@
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border-width: 0;
+}
+
+.sort-icon {
+    width: 12px;
+    height: 12px;
+    margin-inline-start: 6px;
+    color: #6B7280;
+}
+
+.table-sort-select {
+    display: block;
+    padding: 7px;
+    border-radius: 0.5rem;
+    border-width: 1px;
+    border-color: #D1D5DB;
+    width: 100%;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: #111827;
+    background-color: #F9FAFB;
 }
 
 /* Media Queries */
