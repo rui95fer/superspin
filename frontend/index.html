@@ -71,28 +71,30 @@
             </div>
         </header>
 
+        <!-- Search and Sort -->
+        <div class="table-search-container">
+            <div class="table-sort">
+                <label for="table-sort-users"></label>
+                <select id="table-sort-users" class="table-sort-select">
+                    <option value="" disabled selected>Sort by</option>
+                    <option value="asc">Hourly Rate (ascending)</option>
+                    <option value="desc">Hourly Rate (descending)</option>
+                </select>
+            </div>
+            <div class="table-search-wrapper">
+                <div class="table-search-icon">
+                    <svg class="table-search-svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                         viewBox="0 0 20 20">
+                        <path class="table-search-path" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                    </svg>
+                </div>
+                <label for="table-search-users"></label>
+                <input type="text" id="table-search-users" class="table-search-input" placeholder="Search">
+            </div>
+        </div>
+
         <!-- Table -->
         <div class="table-section-container">
-            <div class="table-search-container">
-                <div class="table-sort">
-                    <label for="table-sort-users"></label>
-                    <select id="table-sort-users" class="table-sort-select">
-                        <option value="" disabled selected>Sort by</option>
-                        <option value="asc">Hourly Rate (ascending)</option>
-                        <option value="desc">Hourly Rate (descending)</option>
-                    </select>
-                </div>
-                <div class="table-search-wrapper">
-                    <div class="table-search-icon">
-                        <svg class="table-search-svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                             viewBox="0 0 20 20">
-                            <path class="table-search-path" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-                        </svg>
-                    </div>
-                    <label for="table-search-users"></label>
-                    <input type="text" id="table-search-users" class="table-search-input" placeholder="Search">
-                </div>
-            </div>
             <table id="coaches-table" class="table-container">
                 <thead>
                 <tr>

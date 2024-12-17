@@ -6,41 +6,40 @@ const tableBody = document.querySelector('#coaches-table tbody');
 const searchInput = document.querySelector('#table-search-users');
 const sortSelect = document.querySelector('#table-sort-users');
 
-// Function to fetch and render coach data
-async function fetchAndRenderCoaches(filter = '', sort = '') {
+// Fetches coach data from the API
+async function fetchCoaches(filter = '', sort = '') {
     try {
+        // Create a new URLSearchParams object to build the API query string.
         const params = new URLSearchParams();
         if (filter) params.append('filter', filter);
         if (sort) params.append('sort', sort);
-        // Fetch data from the API
-        const response = await fetch(`${API_URL}?${params.toString()}`);
-        const coaches = await response.json();
 
-        // Render coaches in the table
-        renderTableRows(coaches);
+        // Fetch data from the API using the built query string.
+        const response = await fetch(`${API_URL}?${params.toString()}`);
+        return await response.json();
     } catch (error) {
         console.error('Error fetching coaches:', error);
-        tableBody.innerHTML = '<tr><td colspan="4">Failed to load coaches.</td></tr>';
+        return null;
     }
 }
 
-// Function to render table rows
-function renderTableRows(coaches) {
-// Clear existing rows
+// Renders the coach data in the table.
+function renderCoaches(coaches) {
+    // Clear any existing rows in the table.
     tableBody.innerHTML = '';
 
-    console.log(coaches);
-
-    // Populate rows with coach data
-    if (coaches.length === 0) {
+    // Display a message in the table if no coaches are found.
+    if (!coaches || coaches.length === 0) {
         tableBody.innerHTML = '<tr><td colspan="5">No coaches found.</td></tr>';
         return;
     }
 
+    // Iterate over the coach data and render each row in the table.
     coaches.forEach(coach => {
         const row = document.createElement('tr');
         row.className = 'table-row';
 
+        // Set the inner HTML of the row to the rendered coach data.
         row.innerHTML = `
         <td class="table-row-avatar">
             <img src="./assets/images/profile-picture.jpg" alt="${coach.name}" class="table-avatar">
@@ -54,29 +53,32 @@ function renderTableRows(coaches) {
         <td class="table-data">${coach.location}</td>
     `;
 
+        // Append the rendered row to the table body.
         tableBody.appendChild(row);
     });
-
 }
 
-// Event listener for search functionality
 let searchTimeoutId = null;
 
+// Event listener for search functionality
 searchInput.addEventListener('input', (e) => {
+    // Get the trimmed filter value from the search input element.
     const filterValue = e.target.value.trim();
 
+    // Clear any existing timeout for the search input event listener.
     clearTimeout(searchTimeoutId);
 
-    searchTimeoutId = setTimeout(() => {
-        fetchAndRenderCoaches(filterValue, sortSelect.value);
+    searchTimeoutId = setTimeout(async () => {
+        const coaches = await fetchCoaches(filterValue, sortSelect.value);
+        renderCoaches(coaches);
     }, 250);
 });
 
 // Event listener for sort functionality
 sortSelect.addEventListener('change', (e) => {
     const sortValue = e.target.value;
-    fetchAndRenderCoaches(searchInput.value.trim(), sortValue);
+    fetchCoaches(searchInput.value.trim(), sortValue).then(coaches => renderCoaches(coaches));
 });
 
 // Initial load of coach data
-fetchAndRenderCoaches();
+fetchCoaches().then(coaches => renderCoaches(coaches));
