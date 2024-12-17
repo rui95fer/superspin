@@ -82,3 +82,24 @@ sortSelect.addEventListener('change', (e) => {
 
 // Initial load of coach data
 fetchCoaches().then(coaches => renderCoaches(coaches));
+
+// Initialize the sidebar toggle functionality when the DOM is fully loaded.
+document.addEventListener("DOMContentLoaded", () => {
+    // Get the sidebar element by its ID
+    const sidebar = document.getElementById('logo-sidebar');
+
+    // Get the sidebar toggle button element by its class
+    const toggleButton = document.querySelector('.sidebar-toggle-btn');
+
+    // Toggle the 'open' class on the sidebar when the toggle button is clicked.
+    toggleButton.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+    });
+
+    // Close the sidebar when a click event occurs outside of the sidebar or toggle button.
+    document.addEventListener('click', (event) => {
+        if (!sidebar.contains(event.target) && !toggleButton.contains(event.target)) {
+            sidebar.classList.remove('open');
+        }
+    });
+});
