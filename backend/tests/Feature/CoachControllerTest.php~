@@ -27,9 +27,9 @@ class CoachControllerTest extends TestCase
     // Test filtering coaches by location
     public function test_filter_coaches_by_location()
     {
-        $response = $this->get('/api/coaches?filter=dublin');
+        $response = $this->get('/api/coaches?filter=giza');
         $response->assertStatus(200);
-        $this->assertCount(1, $response->json());
+        $this->assertCount(2, $response->json());
     }
 
     // Test sorting coaches by rate in ascending order

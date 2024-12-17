@@ -9,12 +9,12 @@ class CoachController extends Controller
 {
     // Array of coaches
     private array $coaches = [
-        ['name' => 'John Doe', 'experience' => 5, 'rate' => 20, 'location' => 'Cairo, Egypt', 'joined' => '2021-01-01'],
-        ['name' => 'Jane Smith', 'experience' => 10, 'rate' => 30, 'location' => 'Giza, Egypt', 'joined' => '2020-05-15'],
-        ['name' => 'Ali Hassan', 'experience' => 7, 'rate' => 25, 'location' => 'Alexandria, Egypt', 'joined' => '2022-03-10'],
-        ['name' => 'Ahmed Mohamed', 'experience' => 3, 'rate' => 15, 'location' => 'Cairo, Egypt', 'joined' => '2019-09-20'],
-        ['name' => 'Mona Ali', 'experience' => 9, 'rate' => 35, 'location' => 'Giza, Egypt', 'joined' => '2021-07-05'],
-    ];
+        ['name' => 'Michael Johnson', 'experience' => 5, 'rate' => 20, 'location' => 'New York, USA', 'joined' => '01/01/2021'],
+        ['name' => 'Sophia Williams', 'experience' => 10, 'rate' => 30, 'location' => 'London, UK', 'joined' => '15/05/2020'],
+        ['name' => 'Liam Smith', 'experience' => 7, 'rate' => 25, 'location' => 'Dublin, Ireland', 'joined' => '10/03/2022'],
+        ['name' => 'Isabella Martinez', 'experience' => 3, 'rate' => 15, 'location' => 'Madrid, Spain', 'joined' => '20/09/2019'],
+        ['name' => 'Aiden Lee', 'experience' => 9, 'rate' => 35, 'location' => 'Toronto, Canada', 'joined' => '05/07/2024'],
+];
 
     // Handles the index request for coaches
     public function index(Request $request): JsonResponse
